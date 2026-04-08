@@ -6,3 +6,4 @@
 * https://github.com/neovim-treesitter/nvim-treesitter
 * https://github.com/wsdjeg/treesitter.nvim
 * https://github.com/romus204/tree-sitter-manager.nvim
+* https://github.com/desdic/simple-treesitter.nvim
