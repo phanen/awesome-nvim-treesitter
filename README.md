@@ -8,3 +8,4 @@
 * https://github.com/romus204/tree-sitter-manager.nvim
 * https://github.com/desdic/simple-treesitter.nvim
 * https://github.com/mason-org/mason.nvim/issues/2068
+* https://github.com/yuchanns/ishiku.nvim
