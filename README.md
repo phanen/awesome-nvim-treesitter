@@ -11,3 +11,4 @@
 * https://github.com/yuchanns/ishiku.nvim
 * https://github.com/neovim/neovim/issues/39006
 * https://github.com/lewis6991/treesitter-parser-index
+* https://github.com/reybits/ts-forge.nvim
