@@ -13,3 +13,4 @@
 * https://github.com/lewis6991/treesitter-parser-index
 * https://github.com/reybits/ts-forge.nvim
 * https://github.com/mistweaverco/zana-client
+* https://github.com/VonHeikemen/ts-enable.nvim
