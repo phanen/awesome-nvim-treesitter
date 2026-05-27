@@ -14,3 +14,4 @@
 * https://github.com/reybits/ts-forge.nvim
 * https://github.com/mistweaverco/zana-client
 * https://github.com/VonHeikemen/ts-enable.nvim
+* https://github.com/so1ve/tiny-treesitter.nvim
