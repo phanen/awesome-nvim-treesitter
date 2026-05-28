@@ -1,12 +1,10 @@
 ## awesome-nvim-treesitter
 
-Last updated: 2026-05-28 10:59:28
+Last updated: 2026-05-28 11:08:32
 
-| Plugin | Stars | Last Update | Status |
+| Name | Stars/Reactions | Last Update | Status |
 | :--- | :--- | :--- | :--- |
-| [neovim/neovim](https://github.com/neovim/neovim) | 99883 | 2026-05-27 | Active |
 | [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) | 13933 | 2026-04-03 | Archived |
-| [mason-org/mason.nvim](https://github.com/mason-org/mason.nvim) | 10307 | 2026-05-28 | Active |
 | [romus204/tree-sitter-manager.nvim](https://github.com/romus204/tree-sitter-manager.nvim) | 646 | 2026-05-25 | Active |
 | [arborist-ts/arborist.nvim](https://github.com/arborist-ts/arborist.nvim) | 225 | 2026-05-22 | Active |
 | [neovim-treesitter/nvim-treesitter](https://github.com/neovim-treesitter/nvim-treesitter) | 100 | 2026-04-13 | Active |
@@ -20,3 +18,5 @@ Last updated: 2026-05-28 10:59:28
 | [lewis6991/treesitter-parser-index](https://github.com/lewis6991/treesitter-parser-index) | 3 | 2026-05-27 | Active |
 | [so1ve/tiny-treesitter.nvim](https://github.com/so1ve/tiny-treesitter.nvim) | 3 | 2026-05-26 | Active |
 | [dzfrias/tree-sitter-dl](https://github.com/dzfrias/tree-sitter-dl) | 2 | 2026-05-28 | Active |
+| [neovim#39006: nvim-treeconfig: upstream nvim-treesitter](https://github.com/neovim/neovim/issues/39006) | 464 (Reactions) | 2026-05-06 | Open |
+| [mason.nvim#2068: install treesitter grammars](https://github.com/mason-org/mason.nvim/issues/2068) | 21 (Reactions) | 2026-04-13 | Open |

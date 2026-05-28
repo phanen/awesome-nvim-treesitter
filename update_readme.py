@@ -9,32 +9,51 @@ GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 HEADERS = {"Authorization": f"token {GITHUB_TOKEN}"} if GITHUB_TOKEN else {}
 
 
-def get_repo_info(url):
-    # Extract owner/repo, handle cases like /issues/2068
-    match = re.search(r"github\.com/([\w\-\.]+)/([\w\-\.]+)", url)
-    if not match:
-        return None
-    owner, repo = match.groups()
-    full_name = f"{owner}/{repo}"
-    api_url = f"https://api.github.com/repos/{full_name}"
+def get_metadata(url):
+    # Check if it's an issue URL
+    issue_match = re.search(r"github\.com/([\w\-\.]+)/([\w\-\.]+)/issues/(\d+)", url)
+    repo_match = re.search(r"github\.com/([\w\-\.]+)/([\w\-\.]+)", url)
 
-    try:
-        response = requests.get(api_url, headers=HEADERS)
-        if response.status_code == 200:
-            data = response.json()
-            return {
-                "name": data["full_name"],
-                "stars": data["stargazers_count"],
-                "updated": data["pushed_at"][
-                    :10
-                ],  # pushed_at is usually more relevant for maintenance
-                "status": "Archived" if data["archived"] else "Active",
-                "url": f"https://github.com/{full_name}",
-            }
-        else:
-            print(f"Error fetching {full_name}: {response.status_code}")
-    except Exception as e:
-        print(f"Exception for {full_name}: {e}")
+    if issue_match:
+        owner, repo, number = issue_match.groups()
+        api_url = f"https://api.github.com/repos/{owner}/{repo}/issues/{number}"
+        try:
+            response = requests.get(api_url, headers=HEADERS)
+            if response.status_code == 200:
+                data = response.json()
+                return {
+                    "name": f"{repo}#{number}: {data['title']}",
+                    "value": data.get("reactions", {}).get("total_count", 0),
+                    "value_label": "Reactions",
+                    "updated": data["updated_at"][:10],
+                    "status": data["state"].capitalize(),
+                    "url": url,
+                    "type": "Issue",
+                    "sort_val": data.get("reactions", {}).get("total_count", 0),
+                }
+        except Exception as e:
+            print(f"Error fetching issue {owner}/{repo}#{number}: {e}")
+
+    elif repo_match:
+        owner, repo = repo_match.groups()
+        api_url = f"https://api.github.com/repos/{owner}/{repo}"
+        try:
+            response = requests.get(api_url, headers=HEADERS)
+            if response.status_code == 200:
+                data = response.json()
+                return {
+                    "name": data["full_name"],
+                    "value": data["stargazers_count"],
+                    "value_label": "Stars",
+                    "updated": data["pushed_at"][:10],
+                    "status": "Archived" if data["archived"] else "Active",
+                    "url": f"https://github.com/{owner}/{repo}",
+                    "type": "Repo",
+                    "sort_val": data["stargazers_count"],
+                }
+        except Exception as e:
+            print(f"Error fetching repo {owner}/{repo}: {e}")
+
     return None
 
 
@@ -49,33 +68,23 @@ def main():
     with open(list_file, "r", encoding="utf-8") as f:
         urls = [line.strip() for line in f if line.strip()]
 
-    # Remove duplicates but keep order
-    seen = set()
-    unique_urls = []
-    for url in urls:
-        # Normalize URL to repo root
-        match = re.search(r"(https://github\.com/[\w\-\.]+/[\w\-\.]+)", url)
-        if match:
-            base_url = match.group(1).rstrip(".")
-            if base_url not in seen:
-                unique_urls.append(base_url)
-                seen.add(base_url)
-
     results = []
-    for url in unique_urls:
+    for url in urls:
         print(f"Fetching metadata for: {url}...")
-        info = get_repo_info(url)
+        info = get_metadata(url)
         if info:
             results.append(info)
 
-    # Sort by stars descending
-    results.sort(key=lambda x: x["stars"], reverse=True)
+    # Sort: Repos first (by stars), then Issues (by reactions)
+    results.sort(key=lambda x: (x["type"] == "Issue", -x["sort_val"]))
 
-    header = "| Plugin | Stars | Last Update | Status |\n| :--- | :--- | :--- | :--- |\n"
-    rows = [
-        f"| [{r['name']}]({r['url']}) | {r['stars']} | {r['updated']} | {r['status']} |"
-        for r in results
-    ]
+    header = "| Name | Stars/Reactions | Last Update | Status |\n| :--- | :--- | :--- | :--- |\n"
+    rows = []
+    for r in results:
+        val_display = f"{r['value']} (Reactions)" if r["type"] == "Issue" else f"{r['value']}"
+        rows.append(
+            f"| [{r['name']}]({r['url']}) | {val_display} | {r['updated']} | {r['status']} |"
+        )
 
     table = header + "\n".join(rows)
 
