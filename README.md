@@ -1,19 +1,19 @@
 ## awesome-nvim-treesitter
 
-Last updated: 2026-06-06 03:46:57
+Last updated: 2026-06-07 04:13:54
 
 | Name | Stars/Reactions | Last Update | Status |
 | :--- | :--- | :--- | :--- |
-| [romus204/tree-sitter-manager.nvim](https://github.com/romus204/tree-sitter-manager.nvim) | 688 | 2026-06-05 | Active |
-| [lewis6991/treesitter-parser-index](https://github.com/lewis6991/treesitter-parser-index) | 3 | 2026-06-05 | Active |
+| [neovim#39006: nvim-treeconfig: upstream nvim-treesitter](https://github.com/neovim/neovim/issues/39006) | 470 (Reactions) | 2026-06-06 | Open |
+| [lewis6991/treesitter-parser-index](https://github.com/lewis6991/treesitter-parser-index) | 3 | 2026-06-06 | Active |
+| [romus204/tree-sitter-manager.nvim](https://github.com/romus204/tree-sitter-manager.nvim) | 690 | 2026-06-05 | Active |
 | [neovim-treesitter/nvim-treesitter](https://github.com/neovim-treesitter/nvim-treesitter) | 107 | 2026-06-03 | Active |
 | [so1ve/tiny-treesitter.nvim](https://github.com/so1ve/tiny-treesitter.nvim) | 4 | 2026-05-28 | Active |
 | [dzfrias/tree-sitter-dl](https://github.com/dzfrias/tree-sitter-dl) | 6 | 2026-05-28 | Active |
 | [VonHeikemen/ts-enable.nvim](https://github.com/VonHeikemen/ts-enable.nvim) | 29 | 2026-05-24 | Active |
-| [arborist-ts/arborist.nvim](https://github.com/arborist-ts/arborist.nvim) | 239 | 2026-05-22 | Active |
+| [arborist-ts/arborist.nvim](https://github.com/arborist-ts/arborist.nvim) | 241 | 2026-05-22 | Active |
 | [mistweaverco/zana-client](https://github.com/mistweaverco/zana-client) | 81 | 2026-05-22 | Active |
 | [wsdjeg/treesitter.nvim](https://github.com/wsdjeg/treesitter.nvim) | 5 | 2026-05-20 | Active |
-| [neovim#39006: nvim-treeconfig: upstream nvim-treesitter](https://github.com/neovim/neovim/issues/39006) | 469 (Reactions) | 2026-05-06 | Open |
 | [reybits/ts-forge.nvim](https://github.com/reybits/ts-forge.nvim) | 43 | 2026-04-15 | Active |
 | [mason.nvim#2068: install treesitter grammars](https://github.com/mason-org/mason.nvim/issues/2068) | 22 (Reactions) | 2026-04-13 | Open |
 | [desdic/simple-treesitter.nvim](https://github.com/desdic/simple-treesitter.nvim) | 5 | 2026-04-07 | Active |
