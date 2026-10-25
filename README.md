@@ -1,16 +1,16 @@
 ## awesome-nvim-treesitter
 
-Last updated: 2026-10-24 03:48:28
+Last updated: 2026-10-25 03:47:18
 
 | Name | Stars/Reactions | Last Update | Status |
 | :--- | :--- | :--- | :--- |
-| [lewis6991/treesitter-parser-index](https://github.com/lewis6991/treesitter-parser-index) | 3 | 2026-10-23 | Active |
+| [arborist-ts/arborist.nvim](https://github.com/arborist-ts/arborist.nvim) | 282 | 2026-10-25 | Active |
+| [so1ve/tiny-treesitter.nvim](https://github.com/so1ve/tiny-treesitter.nvim) | 5 | 2026-10-25 | Active |
+| [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) | 14487 | 2026-10-24 | Active |
+| [lewis6991/treesitter-parser-index](https://github.com/lewis6991/treesitter-parser-index) | 3 | 2026-10-24 | Active |
 | [romus204/tree-sitter-manager.nvim](https://github.com/romus204/tree-sitter-manager.nvim) | 881 | 2026-10-21 | Active |
 | [dont-be-evil-company/nvpm-client](https://github.com/mistweaverco/zana-client) | 83 | 2026-10-21 | Active |
-| [so1ve/tiny-treesitter.nvim](https://github.com/so1ve/tiny-treesitter.nvim) | 5 | 2026-10-20 | Active |
-| [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) | 14486 | 2026-10-19 | Active |
 | [lewis6991/ts-install.nvim](https://github.com/lewis6991/ts-install.nvim) | 52 | 2026-10-12 | Active |
-| [arborist-ts/arborist.nvim](https://github.com/arborist-ts/arborist.nvim) | 282 | 2026-10-10 | Active |
 | [neovim-treesitter/nvim-treesitter](https://github.com/neovim-treesitter/nvim-treesitter) | 142 | 2026-09-28 | Active |
 | [reybits/ts-forge.nvim](https://github.com/reybits/ts-forge.nvim) | 45 | 2026-09-26 | Active |
 | [yuchanns/ishiku.nvim](https://github.com/yuchanns/ishiku.nvim) | 3 | 2026-07-27 | Active |
